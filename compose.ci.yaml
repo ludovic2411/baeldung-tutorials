@@ -29,4 +29,4 @@ services:
       - SPRING_DATASOURCE_PASSWORD=postgres
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
       - SPRING_PROFILES_ACTIVE=ci
-    command: sh -c "mvn clean install && mvn spring-boot:run"
+    command: sh -c "mvn clean install"
