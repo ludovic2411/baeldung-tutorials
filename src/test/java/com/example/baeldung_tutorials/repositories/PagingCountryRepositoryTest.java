@@ -16,25 +16,26 @@ import static org.junit.jupiter.api.Assertions.*;
 })
 class PagingCountryRepositoryTest {
 
-    @Autowired private PagingCountryRepository pagingCountryRepository;
+    @Autowired
+    private PagingCountryRepository pagingCountryRepository;
 
     @Test
     void testGetPage() {
-        Pageable firstPageWithFiveCountries = PageRequest.of(0,5);
+        Pageable firstPageWithFiveCountries = PageRequest.of(0, 5);
 
         var result = pagingCountryRepository.findAll(firstPageWithFiveCountries);
         assertFalse(result.isEmpty());
-        assertEquals(5,result.get().toList().size());
+        assertEquals(5, result.get().toList().size());
 
     }
 
     @Test
     void testGetPageWithItems() {
-        Pageable firstPageWithFiveCountries = PageRequest.of(0,10);
+        Pageable firstPageWithFiveCountries = PageRequest.of(0, 10);
 
         var result = pagingCountryRepository.findAll(firstPageWithFiveCountries);
         assertFalse(result.isEmpty());
-        assertEquals(10,result.get().toList().size());
+        assertEquals(10, result.get().toList().size());
 
     }
 }
