@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Import;
 
 @Import({MyTestConfiguration.class})
 @SpringBootTest
+@EnabledLocalTest
 class BaeldungTutorialsApplicationTests {
 
 	@Test
