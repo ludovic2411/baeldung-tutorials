@@ -1,5 +1,6 @@
 package com.example.baeldung_tutorials.config;
 
+import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 import org.springframework.test.context.junit.jupiter.DisabledIf;
 
 import static java.lang.annotation.ElementType.TYPE;
@@ -10,10 +11,8 @@ import java.lang.annotation.Target;
 
 @Retention(RUNTIME)
 @Target({TYPE})
-@DisabledIf(
-        expression = "#{environment.acceptsProfiles('ci')}",
-        reason = "Test only need to works locally",
-        loadContext = true
+@DisabledIfEnvironmentVariable(named = "CI", matches = "true",
+        disabledReason = "Test only need to works locally"
 )
 public @interface EnabledLocalTest {
 }
