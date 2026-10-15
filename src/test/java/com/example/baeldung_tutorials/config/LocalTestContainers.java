@@ -7,5 +7,5 @@ import org.testcontainers.junit.jupiter.Container;
 public interface LocalTestContainers {
     @Container
     @ServiceConnection// tell Spring to use container connections details for datasource
-    static PostgreSQLContainer postgreSQLContainer= new PostgreSQLContainer("postgres:latest");
+    PostgreSQLContainer postgreSQLContainer= new PostgreSQLContainer("postgres:latest");
 }
