@@ -2,6 +2,17 @@
 Project hosting tutorials about Spring based on Baeldung's tutorials
 
 ## Setup
+
+ Using environment variables for secrets
+
+To export environment variables and cleaning them up after use using Powershell files.
+However, you may be prevented from running scripts files. You can disable prevents methods with the following command
+in Powershell:
+
+```shell
+Set-ExecutionPolicy RemoteSigned -Scope Process
+```
+
 Connect to postgres in container:
 
 ````dockerfile

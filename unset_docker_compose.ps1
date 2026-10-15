@@ -1,0 +1,2 @@
+Remove-Item Env:POSTGRES_USER
+Remove-Item Env:POSTGRES_PASSWORD
