@@ -16,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * Test class to run CI/CD tests
  */
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Import({MyTestConfiguration.class})
 @EnabledCITest
 class CountryRepositoryTest {
 
