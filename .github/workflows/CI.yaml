@@ -15,6 +15,7 @@ jobs:
       CI: ${{ vars.CI_TEST }}
 
     steps:
+      - run: echo "${{ vars.CI_TEST }}"
       - name: Checkout code
         uses: actions/checkout@v4
 
