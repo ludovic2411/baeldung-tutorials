@@ -1,5 +1,6 @@
 package com.example.baeldung_tutorials.controllers;
 
+import com.example.baeldung_tutorials.config.EnabledCITest;
 import com.example.baeldung_tutorials.config.MyTestConfiguration;
 import io.restassured.RestAssured;
 import io.restassured.http.Header;
@@ -23,10 +24,7 @@ import static org.hamcrest.Matchers.hasSize;
  * https://www.baeldung.com/rest-assured-header-cookie-parameter
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@EnabledIf(
-        expression = "#{environment.acceptsProfiles('ci')}",
-        loadContext = true
-)
+@EnabledCITest
 public class CountryControllerIntegrationTest {
 
     private final static String BASE_URL = "api/country";

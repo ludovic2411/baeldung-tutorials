@@ -1,5 +1,6 @@
 package com.example.baeldung_tutorials.repositories;
 
+import com.example.baeldung_tutorials.config.EnabledLocalTest;
 import com.example.baeldung_tutorials.config.MyTestConfiguration;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +15,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @Profile("!ci")
 @SpringBootTest(webEnvironment = DEFINED_PORT)
 @Import({MyTestConfiguration.class})
-@EnabledIf(
-        expression = "#{!environment.acceptsProfiles('ci')}",
-        loadContext = true
-)
+@EnabledLocalTest
 class LocalCountryRepositoryTest {
 
     @Autowired private CountryRepository countryRepository;

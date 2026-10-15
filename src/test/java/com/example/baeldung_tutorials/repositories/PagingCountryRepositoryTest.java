@@ -1,5 +1,6 @@
 package com.example.baeldung_tutorials.repositories;
 
+import com.example.baeldung_tutorials.config.EnabledCITest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
@@ -19,10 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
         "jdbc:postgresql://localhost:5432/testdb",
         "spring.jpa.hibernate.ddl-auto=update",
 })
-@EnabledIf(
-        expression = "#{environment.acceptsProfiles('ci')}",
-        loadContext = true
-)
+@EnabledCITest
 class PagingCountryRepositoryTest {
 
     @Autowired

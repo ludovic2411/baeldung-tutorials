@@ -1,5 +1,6 @@
 package com.example.baeldung_tutorials.controllers;
 
+import com.example.baeldung_tutorials.config.EnabledLocalTest;
 import com.example.baeldung_tutorials.config.MyTestConfiguration;
 import io.restassured.RestAssured;
 import io.restassured.http.Header;
@@ -9,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpStatus;
+import org.springframework.test.context.junit.jupiter.DisabledIf;
 import org.springframework.test.context.junit.jupiter.EnabledIf;
 
 import static io.restassured.RestAssured.given;
@@ -22,10 +24,7 @@ import static org.hamcrest.Matchers.hasSize;
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Import({MyTestConfiguration.class})
-@EnabledIf(
-        expression = "#{!environment.acceptsProfiles('ci')}",
-        loadContext = true
-)
+@EnabledLocalTest
 public class LocalCountryControllerIntegrationTest {
 
     private final static String BASE_URL = "api/country";
