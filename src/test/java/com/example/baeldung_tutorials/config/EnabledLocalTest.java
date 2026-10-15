@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 
 @Retention(RUNTIME)
 @Target({TYPE})
-@DisabledIfEnvironmentVariable(named = "CI", matches = "true",
+@DisabledIfEnvironmentVariable(named = "CI_TEST", matches = "true",
         disabledReason = "Test only need to works locally"
 )
 public @interface EnabledLocalTest {

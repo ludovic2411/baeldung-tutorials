@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 
 @Retention(RUNTIME)
 @Target({TYPE})
-@EnabledIfEnvironmentVariable(named = "CI", matches = "true",
+@EnabledIfEnvironmentVariable(named = "CI_TEST", matches = "true",
         disabledReason = "test needs to work only in a CI/CD envronment"
                            )
 public @interface EnabledCITest {
